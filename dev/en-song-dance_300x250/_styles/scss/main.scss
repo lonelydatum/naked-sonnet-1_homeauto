@@ -1,0 +1,47 @@
+
+
+@import '../../../_common/styles/common.scss';
+
+
+
+.frame{
+	opacity: 1;
+}
+
+#banner{
+	font-size: 20px;
+	color: #333;
+	width: 300px;
+	height: 250px;
+}
+
+.t1{
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	@include pos(0, 8);
+	line-height: 22px;
+}
+
+.t2{
+	text-align: right;
+	font-size: 14px;
+	@include pos(10, 197);
+	line-height: 17px;
+}
+
+.hero {
+	@include pos-scale(0, 59, .5);
+}
+
+#line{
+	width: 2px;
+	height: 37px;
+	background-color: red;
+	@include pos(112, 196);
+}
+
+#logo{
+	@include pos(126, 199);
+	width: 75px;
+}
