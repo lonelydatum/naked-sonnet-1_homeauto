@@ -1,0 +1,28 @@
+@import '../../../_common/styles/size_160x600.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+.t1{	
+	font-size: 25px;
+	@include pos(0, 24);
+	line-height: 24px;	
+}
+
+.t2{
+	text-align: center;
+	width: 100%;
+	font-size: 23px;
+	letter-spacing: 0.7px;
+	@include pos(0, 371);
+	line-height: 20px;
+	&.t2b{
+		@include pos(0, 414);
+		line-height: 24px;
+	}
+}
+
+.hero{
+	@include pos-scale(0, 151, .5);
+}

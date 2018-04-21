@@ -1,0 +1,22 @@
+@import '../../../_common/styles/size_728x90.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+.t1{	
+	font-size: 16px;
+	width: initial;
+	@include pos(18, 16);
+	line-height: 19px;
+}
+
+.t2{
+	text-align: right;
+	font-size: 16px;
+	@include pos(326, 28);
+	line-height: 17px;
+	&.t2b{
+		@include pos(326, 47);
+	}
+}
