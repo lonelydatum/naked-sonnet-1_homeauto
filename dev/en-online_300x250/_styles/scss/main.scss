@@ -1,0 +1,35 @@
+@import '../../../_common/styles/common.scss';
+
+
+.frame{
+	// opacity: 1;
+}
+
+#banner{
+	width: 300px;
+	height: 250px;
+	// color: red;
+}
+
+
+
+.t1{	
+	font-size: 25px;
+	@include pos(0, 10);
+	line-height: 27px;	
+}
+
+.hero {
+	opacity:.3;
+	@include pos-scale(0, 35, .5);
+}
+
+
+.logo{
+	@include pos(28, 195);
+	width: 101px;
+}
+
+.cta{	
+	@include pos-scale(156, 145, 0.56);	
+}

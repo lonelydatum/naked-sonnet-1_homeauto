@@ -1,0 +1,29 @@
+@import '../../../_common/styles/size_728x90.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+
+
+.t1{	
+	// color:red;
+	font-size: 28px;
+	text-align: left;
+	width: initial;
+	@include pos(368, 19);
+	line-height: 27px;
+}
+
+.line{	
+	@include pos(573, 10);
+	height:67px;
+}
+
+
+
+
+.logo{
+	@include pos(20, 18);
+	width: 129px;
+}
