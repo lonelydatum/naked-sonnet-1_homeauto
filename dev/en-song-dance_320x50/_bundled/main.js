@@ -14,25 +14,21 @@ exports.size = size;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
-
-var _commonJs = require('./common.js');
+var _commonJsCommonJs = require('../../_common/js/common.js');
 
 function start() {
 	var tl = new TimelineMax();
 	tl.set('.frame1', { opacity: 1 });
-	tl.from('.bg', .5, { x: -_commonJs.size.w, ease: Power2.easeOut }, .2);
+	tl.from('.bg', .5, { y: _commonJsCommonJs.size.h, ease: Power2.easeOut }, .2);
 
 	tl.add('t1');
 	var t1_time = .5;
-	tl.from('.t1', t1_time, { x: '-=' + 250, opacity: 0 }, 't1');
-	tl.from('.hero', t1_time, { x: '-=' + 250, opacity: 0 }, 't1+=' + t1_time * .8);
+	tl.from('.t1', t1_time, { y: '+=' + 90, opacity: 0 }, 't1');
+	tl.from('.hero', t1_time, { y: '+=' + 90, opacity: 0 }, 't1+=' + t1_time * .8);
 
 	tl.add('t2', '+=2');
-	tl.from('.t2a', .35, { x: '-=' + 100, opacity: 0 }, 't2');
-	tl.from('.t2b', .35, { x: '-=' + 100, opacity: 0 }, 't2+=.2');
+	tl.from('.t2a', .35, { y: '+=' + 100, opacity: 0 }, 't2');
+	tl.from('.t2b', .35, { y: '+=' + 100, opacity: 0 }, 't2+=.2');
 
 	tl.add('end', '+=.1');
 	tl.from('.line', .3, { scaleY: 0 }, 'end');
@@ -43,21 +39,9 @@ function start() {
 	tlPulse.from('.black', 1, { opacity: 0, x: "-=0", yoyo: true, repeat: 8, repeatDelay: 0, ease: Linear.easeNone }, '+=0');
 }
 
-exports['default'] = start;
-module.exports = exports['default'];
+start();
 
-},{"./common.js":1}],3:[function(require,module,exports){
-'use strict';
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _commonJsTweenJs = require('../../_common/js/tween.js');
-
-var _commonJsTweenJs2 = _interopRequireDefault(_commonJsTweenJs);
-
-(0, _commonJsTweenJs2['default'])();
-
-},{"../../_common/js/tween.js":2}]},{},[3])
+},{"../../_common/js/common.js":1}]},{},[2])
 
 
 //# sourceMappingURL=main.js.map

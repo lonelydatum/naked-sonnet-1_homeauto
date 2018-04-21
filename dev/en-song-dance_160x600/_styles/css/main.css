@@ -211,53 +211,60 @@ sup {
   position: absolute;
 }
 
+.frame {
+  opacity: 1;
+}
+
 #banner {
-  width: 300px;
-  height: 250px;
+  width: 160px;
+  height: 600px;
 }
 
 .t1 {
-  font-size: 18px;
-  -webkit-transform: translate(0px, 8px);
-  -ms-transform: translate(0px, 8px);
-  transform: translate(0px, 8px);
+  font-size: 25px;
+  -webkit-transform: translate(0px, 24px);
+  -ms-transform: translate(0px, 24px);
+  transform: translate(0px, 24px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  line-height: 22px;
+  line-height: 24px;
 }
 
 .t2 {
-  text-align: right;
-  font-size: 14px;
-  -webkit-transform: translate(10px, 197px);
-  -ms-transform: translate(10px, 197px);
-  transform: translate(10px, 197px);
+  text-align: center;
+  width: 100%;
+  font-size: 23px;
+  letter-spacing: 0.7px;
+  -webkit-transform: translate(0px, 371px);
+  -ms-transform: translate(0px, 371px);
+  transform: translate(0px, 371px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  line-height: 17px;
+  line-height: 20px;
 }
 
 .t2.t2b {
-  -webkit-transform: translate(14px, 214px);
-  -ms-transform: translate(14px, 214px);
-  transform: translate(14px, 214px);
+  -webkit-transform: translate(0px, 414px);
+  -ms-transform: translate(0px, 414px);
+  transform: translate(0px, 414px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
+  line-height: 24px;
 }
 
 .hero {
-  -webkit-transform: translate(0px, 59px) scale(0.5, 0.5);
-  -ms-transform: translate(0px, 59px) scale(0.5, 0.5);
-  transform: translate(0px, 59px) scale(0.5, 0.5);
+  -webkit-transform: translate(0px, 164px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 164px) scale(0.5, 0.5);
+  transform: translate(0px, 164px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -277,23 +284,23 @@ sup {
 }
 
 .logo {
-  -webkit-transform: translate(126px, 199px);
-  -ms-transform: translate(126px, 199px);
-  transform: translate(126px, 199px);
+  -webkit-transform: translate(24px, 541px);
+  -ms-transform: translate(24px, 541px);
+  transform: translate(24px, 541px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 75px;
+  width: 115px;
 }
 
 .cta {
   width: 67px;
   height: 29px;
-  -webkit-transform: translate(217px, 200px);
-  -ms-transform: translate(217px, 200px);
-  transform: translate(217px, 200px);
+  -webkit-transform: translate(57px, 490px);
+  -ms-transform: translate(57px, 490px);
+  transform: translate(57px, 490px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
