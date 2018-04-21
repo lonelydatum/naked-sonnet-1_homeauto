@@ -10,6 +10,8 @@
 	// color:red;
 }
 
+
+
 .t1{	
 	font-size: 25px;
 	@include pos(0, 24);
@@ -22,9 +24,9 @@
 	font-size: 23px;
 	letter-spacing: 0.7px;
 	@include pos(0, 371);
-	line-height: 20px;
+	line-height: 24px;
 	&.t2b{
-		@include pos(0, 414);
+		@include pos(0, 419);
 		line-height: 24px;
 	}
 }

@@ -244,13 +244,13 @@ sup {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .t2.t2b {
-  -webkit-transform: translate(0px, 414px);
-  -ms-transform: translate(0px, 414px);
-  transform: translate(0px, 414px);
+  -webkit-transform: translate(0px, 419px);
+  -ms-transform: translate(0px, 419px);
+  transform: translate(0px, 419px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
