@@ -1,13 +1,7 @@
-@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/size_160x600.scss';
 
 .frame{
-	opacity: 1;
-}
-
-#banner{
-	width: 160px;
-	height: 600px;
-	// color:red;
+	// opacity: 1;
 }
 
 .t1{	
@@ -27,26 +21,4 @@
 		@include pos(0, 414);
 		line-height: 24px;
 	}
-}
-
-.hero {
-	@include pos-scale(0, 164, .5);
-}
-
-.line{	
-	@include pos(112, 196);
-}
-
-.logo{
-	@include pos(24, 541);
-	width: 115px;
-}
-
-.cta{
-	width: 67px;
-	height: 29px;
-	@include pos(57, 490);	
-	.black{
-		
-	}	
 }

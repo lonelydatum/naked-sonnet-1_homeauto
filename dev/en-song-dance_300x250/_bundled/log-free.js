@@ -2,14 +2,30 @@
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+	value: true
 });
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power2.easeOut;
 
+var tlPulse = new TimelineMax();
+tlPulse.add('go');
+tlPulse.from('.cta img', .3, { scale: .6, opacity: 0 }, 'go');
+tlPulse.from('.black', .5, { opacity: 0, x: "-=0", yoyo: true, repeat: 6, repeatDelay: 0, ease: Sine.easeInOut }, '+=0');
+
+setTimeout(function () {
+	// TweenMax.to('.cta', .1, {scale:.501})
+}, 2000);
+
+var READ_T1 = 1.2;
+
+var tl = new TimelineMax();
+
 exports.size = size;
+exports.tlPulse = tlPulse;
+exports.READ_T1 = READ_T1;
+exports.tl = tl;
 
 },{}],2:[function(require,module,exports){
 'use strict';
@@ -20,27 +36,57 @@ Object.defineProperty(exports, '__esModule', {
 
 var _commonJs = require('./common.js');
 
-function start() {
-	var tl = new TimelineMax();
-	tl.set('.frame1', { opacity: 1 });
-	tl.from('.bg', .5, { x: -_commonJs.size.w, ease: Power2.easeOut }, .2);
+var t1_time = .5;
 
-	tl.add('t1');
-	var t1_time = .5;
-	tl.from('.t1', t1_time, { x: '-=' + 250, opacity: 0 }, 't1');
-	tl.from('.hero', t1_time, { x: '-=' + 250, opacity: 0 }, 't1+=' + t1_time * .8);
+function start(heroFunk) {
+	var delay = location.hostname === 'localhost' ? 500 : 0;
+	setTimeout(function () {
+		tween(heroFunk);
+	}, delay);
+}
 
-	tl.add('t2', '+=2');
-	tl.from('.t2a', .35, { x: '-=' + 100, opacity: 0 }, 't2');
-	tl.from('.t2b', .35, { x: '-=' + 100, opacity: 0 }, 't2+=.2');
+function tween(heroFunk) {
+	_commonJs.tl.set('.frame1', { opacity: 1 });
+	_commonJs.tl.from('.bg', .5, { x: -_commonJs.size.w, ease: Power2.easeOut }, .2);
 
-	tl.add('end', '+=.1');
-	tl.from('.line', .3, { scaleY: 0 }, 'end');
-	tl.from('.logo', .3, { opacity: 0 }, 'end');
-	tl.from('.cta', .3, { opacity: 0, scale: .5 }, 'end');
+	_commonJs.tl.add('t1');
 
-	var tlPulse = new TimelineMax();
-	tlPulse.from('.black', 1, { opacity: 0, x: "-=0", yoyo: true, repeat: 8, repeatDelay: 0, ease: Linear.easeNone }, '+=0');
+	_commonJs.tl.from('.t1', t1_time, { x: '-=' + 250, opacity: 0 }, 't1');
+
+	if (heroFunk === 'hero_mask') {
+		hero_mask();
+	} else {
+		hero_swipe();
+	}
+
+	_commonJs.tl.add('t2', '+=' + _commonJs.READ_T1);
+	_commonJs.tl.from('.t2a', .35, { x: '-=' + 100, opacity: 0 }, 't2');
+	_commonJs.tl.from('.t2b', .35, { x: '-=' + 100, opacity: 0 }, 't2+=.2');
+
+	_commonJs.tl.add('end', '+=.1');
+	_commonJs.tl.from('.line', .3, { scaleY: 0 }, 'end');
+	_commonJs.tl.from('.logo', .3, { opacity: 0 }, 'end');
+	_commonJs.tl.from('.cta', .6, { opacity: 0, scale: .3 }, 'end');
+
+	_commonJs.tl.add(_commonJs.tlPulse);
+	// tl.gotoAndPlay('end')
+}
+
+function hero_swipe() {
+	_commonJs.tl.from('.hero', t1_time, { x: '-=' + 250, opacity: 0 }, 't1+=' + t1_time * .8);
+}
+
+function hero_mask() {
+
+	var hero = {};
+	hero.dom = document.querySelector('.hero');
+	hero.w = hero.dom.offsetWidth;
+	hero.h = hero.dom.offsetHeight;
+
+	var mask_from = { opacity: 0, clip: 'rect(0px,' + 0 + 'px,' + hero.h + 'px,0px)' };
+	var mask_to = { opacity: 1, clip: 'rect(0px,' + hero.w + 'px,' + hero.h + 'px,0px)', ease: Power3.easeOut };
+
+	_commonJs.tl.fromTo('.hero', .7, mask_from, mask_to, 't1+=.5');
 }
 
 exports['default'] = start;

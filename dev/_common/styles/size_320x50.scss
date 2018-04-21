@@ -1,0 +1,43 @@
+@import './common.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+#banner{
+	width: 320px;
+	height: 50px;
+	// color: red;
+}
+
+
+
+.t1{
+	text-align: left;
+	width: initial;
+	font-size: 15px;
+	@include pos(119, 8);
+	line-height: 17px;
+	&.t1b{
+		@include pos(116, 24);
+	}
+}
+
+
+.logo{
+	@include pos(16, 12);
+	width: 71px;
+}
+
+.cta{
+	// @include pos-scale(198, -7, 0.47);	
+	@include pos-scale(198, -7, 0.401);	
+	will-change: transform;
+	// translate3d(0, 0, 0.1px)
+	img{
+		// will-change: transform;
+	}
+	.black{
+		
+	}	
+}

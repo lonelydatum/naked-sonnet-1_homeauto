@@ -1,28 +1,67 @@
-import {size} from './common.js'
+import {size, tlPulse, READ_T1, tl} from './common.js'
 
-function start() {
-	const tl = new TimelineMax()
+
+
+
+let t1_time = .5
+
+function start(heroFunk) {
+	const delay = (location.hostname==='localhost') ? 500 : 0
+	setTimeout(()=>{
+		tween(heroFunk)	
+	}, delay)
+}
+
+function tween(heroFunk) {
 	tl.set('.frame1', {opacity:1})
 	tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
 
 	tl.add('t1')
-	const t1_time = .5
+	
 	tl.from('.t1', t1_time, {x:`-=${250}`, opacity:0}, 't1')
-	tl.from('.hero', t1_time, {x:`-=${250}`, opacity:0}, `t1+=${t1_time*.8}`)
+	
 
-	tl.add('t2', '+=2')
+	if(heroFunk==='hero_mask'){
+		hero_mask()	
+	}else{
+		hero_swipe()
+	}
+	
+
+	tl.add('t2', `+=${READ_T1}`)
 	tl.from('.t2a', .35, {x:`-=${100}`, opacity:0}, 't2')
 	tl.from('.t2b', .35, {x:`-=${100}`, opacity:0}, 't2+=.2')
 
 	tl.add('end', '+=.1')
 	tl.from('.line', .3, {scaleY:0}, 'end')
 	tl.from('.logo', .3, {opacity:0}, 'end')
-	tl.from('.cta', .3, {opacity:0, scale:.5}, 'end')
+	tl.from('.cta', .6, {opacity:0, scale:.3}, 'end')
 
 
-	const tlPulse = new TimelineMax()
-	tlPulse.from('.black', 1, {opacity:0, x:"-=0", yoyo:true, repeat:8, repeatDelay:0, ease:Linear.easeNone}, '+=0')
+	tl.add(tlPulse)
+	// tl.gotoAndPlay('end')
+
 }
+
+
+function hero_swipe(){
+	tl.from('.hero', t1_time, {x:`-=${250}`, opacity:0}, `t1+=${t1_time*.8}`)
+}
+
+function hero_mask(){
+
+	const hero = {}
+	hero.dom = document.querySelector('.hero')
+	hero.w = hero.dom.offsetWidth
+	hero.h = hero.dom.offsetHeight
+	
+	const mask_from = {opacity:0, clip: `rect(0px,${0}px,${hero.h}px,0px)`}
+	const mask_to = {opacity:1, clip: `rect(0px,${hero.w}px,${hero.h}px,0px)`, ease:Power3.easeOut}
+	
+	tl.fromTo('.hero', .7, mask_from, mask_to, `t1+=.5`)
+}
+
+
 
 
 

@@ -1,0 +1,43 @@
+@import './common.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+#banner{
+	width: 300px;
+	height: 250px;
+}
+
+.t1{	
+	font-size: 18px;
+	@include pos(0, 8);
+	line-height: 22px;
+}
+
+.t2{
+	text-align: right;
+	font-size: 14px;
+	@include pos(11, 197);
+	line-height: 17px;
+	&.t2b{
+		@include pos(7, 214);
+	}
+}
+
+.hero {
+	@include pos-scale(0, 59, .5);
+}
+
+.line{	
+	@include pos(113, 196);
+}
+
+.logo{
+	@include pos(126, 199);
+	width: 75px;
+}
+
+.cta{	
+	@include pos-scale(174, 182, 0.44);		
+}

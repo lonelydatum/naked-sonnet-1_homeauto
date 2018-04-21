@@ -1,13 +1,7 @@
-@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/size_728x90.scss';
 
 .frame{
 	// opacity: 1;
-}
-
-#banner{
-	width: 728px;
-	height: 90px;
-	// color: red;
 }
 
 .t1{	
@@ -25,27 +19,4 @@
 	&.t2b{
 		@include pos(326, 47);
 	}
-}
-
-.hero {
-	@include pos-scale(166, 0, .5);
-}
-
-.line{	
-	@include pos(451, 27);
-	height:42px;
-}
-
-.logo{
-	@include pos(474, 24);
-	width: 110px;
-}
-
-.cta{
-	width: 67px;
-	height: 29px;
-	@include pos(617, 20);	
-	.black{
-		
-	}	
 }

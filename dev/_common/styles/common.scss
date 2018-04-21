@@ -112,15 +112,19 @@ sup{
 
 }
 
+
 .cta{
-	
-	border-radius: 8px;
+	width: 150px;
+	height: 66px;
+	border-radius: 19px;	
 	overflow: hidden;
+	// transform-origin: 0 0;
+	
 	.black{
-		width: 45px;
-		height: 25px;
+		width: 74px;
+		height: 32px;
 		background-color: black;
-		@include pos-scale-rotate(37, 18, 1, -33);
+		@include pos-scale-rotate(93, 44, 1, -33);
 	}
 	img{
 		width: 100%;
