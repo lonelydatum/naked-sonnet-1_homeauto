@@ -13,7 +13,7 @@ function start(heroFunk) {
 function tween(heroFunk) {
 	
 	tl.set('.frame1', {opacity:1})
-	tl.from('.bg', .5, {y:size.h, ease:Power2.easeOut}, .2)
+	// tl.from('.bg', .5, {y:size.h, ease:Power2.easeOut}, .2)
 
 	tl.add('t1')
 	
@@ -33,8 +33,8 @@ function tween(heroFunk) {
 	tl.add('end', '+=.1')
 	tl.from('.line', .3, {scaleY:0}, 'end')
 	tl.from('.logo', .3, {opacity:0}, 'end')
-	
-	tl.add(tlPulse)
+	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
+	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
 
 
 }
@@ -55,7 +55,7 @@ function hero_mask(){
 	const mask_from = {opacity:0, clip: `rect(${hero.h}px,${hero.w}px,${hero.h}px,0px)`}
 	const mask_to = {opacity:1, clip: `rect(0px,${hero.w}px,${hero.h}px,0px)`, ease:Power3.easeOut}
 	
-	tl.fromTo('.hero', .6, mask_from, mask_to, `t1+=.5`)
+	tl.fromTo('.hero', .4, mask_from, mask_to, `t1+=.5`)
 }
 
 

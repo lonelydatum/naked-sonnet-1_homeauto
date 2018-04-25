@@ -1,0 +1,14 @@
+@import './size_300x600.scss';
+@import './fr.scss';
+
+
+
+.cta{
+	@include pos-scale(76, 529, 0.87);	
+}
+
+
+
+.hero {
+	@include pos-scale(0, 157, .5);
+}

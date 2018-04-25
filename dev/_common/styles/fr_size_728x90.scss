@@ -1,0 +1,32 @@
+@import './size_728x90.scss';
+@import './fr.scss';
+
+
+.t1{	
+	font-size: 14px;
+	letter-spacing: .3px;
+	width: initial;
+	@include pos(8, 12);
+	line-height: 16px;
+}
+
+.t2{
+	text-align: right;
+	font-size: 15px;
+	@include pos(316, 28);
+	line-height: 17px;
+	&.t2b{
+		@include pos(326, 47);
+	}
+}
+
+
+.line{	
+	@include pos(457, 25);
+	height:42px;
+}
+
+
+.cta{	
+	@include pos-scale(580, 19, 0.78);		
+}

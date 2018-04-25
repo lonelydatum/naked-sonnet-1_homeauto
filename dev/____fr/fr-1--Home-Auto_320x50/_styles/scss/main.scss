@@ -1,0 +1,18 @@
+@import '../../../_common/styles/fr_size_320x50.scss';
+
+
+.frame{
+	// opacity: 1;
+}
+
+
+.t1{	
+	// color:red;
+	font-size: 13px;
+	letter-spacing: -.3px;
+	@include pos(105, 10);	
+	&.t1b{
+		@include pos(105, 24);
+	}
+}
+

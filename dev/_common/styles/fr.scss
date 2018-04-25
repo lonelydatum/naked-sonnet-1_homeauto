@@ -1,0 +1,15 @@
+.cta{	
+	height: 53px;
+	border-radius: 15px;
+	
+	// @include pos-scale(6, 483, 0.7);	
+	.cta_en {
+		display: none;
+	}
+	.cta_fr {
+		display: block;
+	}
+	.black{
+		@include pos-scale-rotate(91, 40, 1, -33);
+	}
+}

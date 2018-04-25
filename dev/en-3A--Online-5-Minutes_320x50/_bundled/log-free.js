@@ -11,8 +11,8 @@ TweenLite.defaultEase = Power2.easeOut;
 
 var tlPulse = new TimelineMax();
 tlPulse.add('go');
-tlPulse.from('.cta img', .3, { scale: .6, opacity: 0 }, 'go');
-tlPulse.from('.black', .5, { opacity: 0, x: "-=0", yoyo: true, repeat: 6, repeatDelay: 0, ease: Sine.easeInOut }, '+=0');
+// tlPulse.from('.cta img', .3, {scale:.6, opacity:0}, 'go')
+// tlPulse.from('.black', .5, {opacity:0, x:"-=0", yoyo:true, repeat:6, repeatDelay:0, ease:Sine.easeInOut}, '+=0')
 
 setTimeout(function () {
 	// TweenMax.to('.cta', .1, {scale:.501})
@@ -46,7 +46,8 @@ function start() {
 	_commonJs.tl.from('.t1a', .35, { y: '+=' + 100, opacity: 0 }, 't1');
 	_commonJs.tl.from('.t1b', .35, { y: '+=' + 100, opacity: 0 }, 't1+=.2');
 
-	_commonJs.tl.add(_commonJs.tlPulse);
+	_commonJs.tl.from('.cta', .3, { opacity: 0, scale: .3, ease: Back.easeInOut });
+	_commonJs.tl.from('.black', .3, { x: '+=50', y: '+=50', ease: Sine.easeInOut }, '-=.1');
 }
 
 exports['default'] = start;

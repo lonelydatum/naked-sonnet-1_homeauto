@@ -1,0 +1,6 @@
+@import './size_320x50.scss';
+@import './fr.scss';
+
+.cta{	
+	@include pos-scale(198, -1, 0.48);		
+}

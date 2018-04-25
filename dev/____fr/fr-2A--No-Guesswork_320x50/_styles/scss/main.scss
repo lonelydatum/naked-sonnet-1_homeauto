@@ -1,0 +1,19 @@
+@import '../../../_common/styles/fr_size_320x50.scss';
+
+.frame{
+	// opacity: 1;
+}
+
+
+.t1{	
+	font-size: 13px;
+	@include pos(104, 10);	
+	&.t1b{
+		@include pos(114, 24);
+	}
+}
+
+
+.cta{
+	@include pos-scale(193, -1, 0.58);		
+}

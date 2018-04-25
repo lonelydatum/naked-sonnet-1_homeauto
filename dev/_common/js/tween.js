@@ -5,16 +5,17 @@ import {size, tlPulse, READ_T1, tl} from './common.js'
 
 let t1_time = .5
 
-function start(heroFunk) {
+function start(heroFunk, text2=['.t2a']) {
 	const delay = (location.hostname==='localhost') ? 500 : 0
 	setTimeout(()=>{
-		tween(heroFunk)	
+		tween(heroFunk, text2)	
 	}, delay)
 }
 
-function tween(heroFunk) {
+function tween(heroFunk, text2=['.t2a']) {
+	console.log(text2);
 	tl.set('.frame1', {opacity:1})
-	tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
+	// tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
 
 	tl.add('t1')
 	
@@ -29,16 +30,19 @@ function tween(heroFunk) {
 	
 
 	tl.add('t2', `+=${READ_T1}`)
-	tl.from('.t2a', .35, {x:`-=${100}`, opacity:0}, 't2')
-	tl.from('.t2b', .35, {x:`-=${100}`, opacity:0}, 't2+=.2')
+	
+	tl.from(text2, .35, {x:`-=${100}`, opacity:0}, 't2')		
+	if(text2.length===1){
+		tl.from('.t2b', .35, {x:`-=${100}`, opacity:0}, 't2+=.2')		
+	}
+	
+	
 
 	tl.add('end', '+=.1')
 	tl.from('.line', .3, {scaleY:0}, 'end')
 	tl.from('.logo', .3, {opacity:0}, 'end')
-	tl.from('.cta', .6, {opacity:0, scale:.3}, 'end')
-
-
-	tl.add(tlPulse)
+	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
+	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
 	// tl.gotoAndPlay('end')
 
 }

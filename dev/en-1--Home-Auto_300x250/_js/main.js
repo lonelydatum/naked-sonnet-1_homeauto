@@ -16,7 +16,7 @@ function start(heroFunk) {
 function tween(heroFunk) {
 	tl.set('.frame1', {opacity:1})
 	
-	tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
+	// tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
 	tl.from('.t1', t1_time, {x:`-=${250}`, opacity:0})	
 	
 
@@ -29,8 +29,8 @@ function tween(heroFunk) {
 	tl.from('.logo', .3, {opacity:0})	
 	
 	
-	tl.from('.cta', .6, {opacity:0, scale:.3}, 'end')
-	tl.add(tlPulse)
+	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
+	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
 	// tl.gotoAndPlay('end')
 
 }

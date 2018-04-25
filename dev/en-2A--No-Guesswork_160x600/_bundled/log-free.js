@@ -11,8 +11,8 @@ TweenLite.defaultEase = Power2.easeOut;
 
 var tlPulse = new TimelineMax();
 tlPulse.add('go');
-tlPulse.from('.cta img', .3, { scale: .6, opacity: 0 }, 'go');
-tlPulse.from('.black', .5, { opacity: 0, x: "-=0", yoyo: true, repeat: 6, repeatDelay: 0, ease: Sine.easeInOut }, '+=0');
+// tlPulse.from('.cta img', .3, {scale:.6, opacity:0}, 'go')
+// tlPulse.from('.black', .5, {opacity:0, x:"-=0", yoyo:true, repeat:6, repeatDelay:0, ease:Sine.easeInOut}, '+=0')
 
 setTimeout(function () {
 	// TweenMax.to('.cta', .1, {scale:.501})
@@ -39,15 +39,20 @@ var _commonJs = require('./common.js');
 var t1_time = .5;
 
 function start(heroFunk) {
+	var text2 = arguments.length <= 1 || arguments[1] === undefined ? ['.t2a'] : arguments[1];
+
 	var delay = location.hostname === 'localhost' ? 500 : 0;
 	setTimeout(function () {
-		tween(heroFunk);
+		tween(heroFunk, text2);
 	}, delay);
 }
 
 function tween(heroFunk) {
+	var text2 = arguments.length <= 1 || arguments[1] === undefined ? ['.t2a'] : arguments[1];
+
+	void 0;
 	_commonJs.tl.set('.frame1', { opacity: 1 });
-	_commonJs.tl.from('.bg', .5, { x: -_commonJs.size.w, ease: Power2.easeOut }, .2);
+	// tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
 
 	_commonJs.tl.add('t1');
 
@@ -60,15 +65,17 @@ function tween(heroFunk) {
 	}
 
 	_commonJs.tl.add('t2', '+=' + _commonJs.READ_T1);
-	_commonJs.tl.from('.t2a', .35, { x: '-=' + 100, opacity: 0 }, 't2');
-	_commonJs.tl.from('.t2b', .35, { x: '-=' + 100, opacity: 0 }, 't2+=.2');
+
+	_commonJs.tl.from(text2, .35, { x: '-=' + 100, opacity: 0 }, 't2');
+	if (text2.length === 1) {
+		_commonJs.tl.from('.t2b', .35, { x: '-=' + 100, opacity: 0 }, 't2+=.2');
+	}
 
 	_commonJs.tl.add('end', '+=.1');
 	_commonJs.tl.from('.line', .3, { scaleY: 0 }, 'end');
 	_commonJs.tl.from('.logo', .3, { opacity: 0 }, 'end');
-	_commonJs.tl.from('.cta', .6, { opacity: 0, scale: .3 }, 'end');
-
-	_commonJs.tl.add(_commonJs.tlPulse);
+	_commonJs.tl.from('.cta', .3, { opacity: 0, scale: .3, ease: Back.easeInOut }, 'end');
+	_commonJs.tl.from('.black', .3, { x: '+=50', y: '+=50', ease: Sine.easeInOut }, '-=.1');
 	// tl.gotoAndPlay('end')
 }
 

@@ -11,8 +11,8 @@ TweenLite.defaultEase = Power2.easeOut;
 
 var tlPulse = new TimelineMax();
 tlPulse.add('go');
-tlPulse.from('.cta img', .3, { scale: .6, opacity: 0 }, 'go');
-tlPulse.from('.black', .5, { opacity: 0, x: "-=0", yoyo: true, repeat: 6, repeatDelay: 0, ease: Sine.easeInOut }, '+=0');
+// tlPulse.from('.cta img', .3, {scale:.6, opacity:0}, 'go')
+// tlPulse.from('.black', .5, {opacity:0, x:"-=0", yoyo:true, repeat:6, repeatDelay:0, ease:Sine.easeInOut}, '+=0')
 
 setTimeout(function () {
 	// TweenMax.to('.cta', .1, {scale:.501})
@@ -58,7 +58,8 @@ function tween(heroFunk) {
 
 	_commonJsCommonJs.tl.from('.line', .3, { scaleY: 0 });
 
-	_commonJsCommonJs.tl.add(_commonJsCommonJs.tlPulse);
+	_commonJsCommonJs.tl.from('.cta', .3, { opacity: 0, scale: .3, ease: Back.easeInOut }, 'end');
+	_commonJsCommonJs.tl.from('.black', .3, { x: '+=50', y: '+=50', ease: Sine.easeInOut }, '-=.1');
 }
 
 function hero_swipe() {

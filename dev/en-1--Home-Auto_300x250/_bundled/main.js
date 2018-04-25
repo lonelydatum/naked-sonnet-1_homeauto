@@ -11,8 +11,8 @@ TweenLite.defaultEase = Power2.easeOut;
 
 var tlPulse = new TimelineMax();
 tlPulse.add('go');
-tlPulse.from('.cta img', .3, { scale: .6, opacity: 0 }, 'go');
-tlPulse.from('.black', .5, { opacity: 0, x: "-=0", yoyo: true, repeat: 6, repeatDelay: 0, ease: Sine.easeInOut }, '+=0');
+// tlPulse.from('.cta img', .3, {scale:.6, opacity:0}, 'go')
+// tlPulse.from('.black', .5, {opacity:0, x:"-=0", yoyo:true, repeat:6, repeatDelay:0, ease:Sine.easeInOut}, '+=0')
 
 setTimeout(function () {
 	// TweenMax.to('.cta', .1, {scale:.501})
@@ -44,7 +44,7 @@ function start(heroFunk) {
 function tween(heroFunk) {
 	_commonJsCommonJs.tl.set('.frame1', { opacity: 1 });
 
-	_commonJsCommonJs.tl.from('.bg', .5, { x: -_commonJsCommonJs.size.w, ease: Power2.easeOut }, .2);
+	// tl.from('.bg', .5, {x:-size.w, ease:Power2.easeOut}, .2)
 	_commonJsCommonJs.tl.from('.t1', t1_time, { x: '-=' + 250, opacity: 0 });
 
 	if (heroFunk === 'hero_mask') {
@@ -55,8 +55,8 @@ function tween(heroFunk) {
 
 	_commonJsCommonJs.tl.from('.logo', .3, { opacity: 0 });
 
-	_commonJsCommonJs.tl.from('.cta', .6, { opacity: 0, scale: .3 }, 'end');
-	_commonJsCommonJs.tl.add(_commonJsCommonJs.tlPulse);
+	_commonJsCommonJs.tl.from('.cta', .3, { opacity: 0, scale: .3, ease: Back.easeInOut }, 'end');
+	_commonJsCommonJs.tl.from('.black', .3, { x: '+=50', y: '+=50', ease: Sine.easeInOut }, '-=.1');
 	// tl.gotoAndPlay('end')
 }
 

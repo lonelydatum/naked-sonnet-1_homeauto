@@ -1,0 +1,14 @@
+@import './size_300x250.scss';
+@import './fr.scss';
+
+.line{	
+	@include pos(117, 196);
+}
+
+.cta{	
+	@include pos-scale(176, 188, 0.53);		
+}
+.logo{
+	@include pos(126, 201);
+	width: 75px;
+}

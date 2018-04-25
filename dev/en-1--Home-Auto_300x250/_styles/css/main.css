@@ -167,6 +167,10 @@ sup {
   overflow: hidden;
 }
 
+.cta .cta_fr {
+  display: none;
+}
+
 .cta .black {
   width: 74px;
   height: 32px;
