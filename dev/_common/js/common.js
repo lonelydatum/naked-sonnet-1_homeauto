@@ -13,19 +13,19 @@ TweenLite.defaultEase = Power2.easeOut
 
 
 const tlPulse = new TimelineMax()
-tlPulse.add('go')
+
 // tlPulse.from('.cta img', .3, {scale:.6, opacity:0}, 'go')
 // tlPulse.from('.black', .5, {opacity:0, x:"-=0", yoyo:true, repeat:6, repeatDelay:0, ease:Sine.easeInOut}, '+=0')
 
+tlPulse.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
+tlPulse.from('.black', .3, {x:'+=50', y:'+=50', ease:Power2.easeOut}, '+=.1')
 
 
-setTimeout(()=>{
-	// TweenMax.to('.cta', .1, {scale:.501})
-}, 2000)
 	
 
 const READ_T1 = 1.2
 
 const tl = new TimelineMax()
+
 
 export {size, tlPulse, READ_T1, tl}

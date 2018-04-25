@@ -24,8 +24,7 @@ function tween(heroFunk) {
 	
 	
 	tl.from('.t1', t1_time, {x:`-=${250}`, opacity:0})	
-	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
-	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
+	tl.add(tlPulse)
 	// tl.add(tlPulse)
 	// tl.gotoAndPlay('end')
 

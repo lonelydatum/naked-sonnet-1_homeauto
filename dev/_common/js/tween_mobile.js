@@ -12,8 +12,7 @@ function start() {
 	// tl.from('.t1b', .35, {y:`+=${100}`, opacity:0}, 't1+=.2')
 
 	
-	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut})
-	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
+	tl.add(tlPulse)
 	
 
 }

@@ -38,9 +38,8 @@ function tween(heroFunk, text2=['.t2a']) {
 	tl.add('end', '+=.1')
 	tl.from('.line', .3, {scaleY:0}, 'end')
 	tl.from('.logo', .3, {opacity:0}, 'end')
-	tl.from('.cta', .3, {opacity:0, scale:.3, ease:Back.easeInOut}, 'end')
-	tl.from('.black', .3, {x:'+=50', y:'+=50', ease:Sine.easeInOut}, '-=.1')
-
+	
+	tl.add(tlPulse)
 
 }
 

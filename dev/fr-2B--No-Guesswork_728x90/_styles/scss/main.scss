@@ -1,0 +1,28 @@
+@import '../../../_common/styles/fr_size_728x90.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+.t1{	
+	font-size: 16px;
+	width: initial;
+	@include pos(8, 17);
+	line-height: 18px;
+}
+
+// .t2{
+// 	text-align: right;
+// 	font-size: 15px;
+// 	@include pos(314, 28);
+// 	line-height: 17px;
+// 	&.t2b{
+// 		@include pos(326, 46);
+// 	}
+// }
+
+// .line{	
+// 	@include pos(459, 27);
+// 	height:42px;
+// }

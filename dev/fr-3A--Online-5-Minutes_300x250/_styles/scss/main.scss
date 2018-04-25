@@ -1,0 +1,36 @@
+@import '../../../_common/styles/fr_size_300x250.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+
+.t1{	
+	font-size: 18px;
+	@include pos(0, 8);
+	line-height: 22px;
+}
+
+.t2{
+	text-align: right;
+	font-size: 12px;
+	@include pos(15, 195);
+	line-height: 12px;
+
+}
+
+
+.line{	
+	@include pos(103, 194);
+}
+
+
+
+.cta{	
+	@include pos-scale(173, 187, 0.53);		
+}
+
+.logo{
+	@include pos(120, 201);
+}

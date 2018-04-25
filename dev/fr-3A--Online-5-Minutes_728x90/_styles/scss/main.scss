@@ -1,0 +1,37 @@
+@import '../../../_common/styles/fr_size_728x90.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+
+
+.t1{	
+	font-size: 16px;
+	width: initial;
+	@include pos(18, 16);
+	line-height: 19px;
+}
+
+.t2{
+	text-align: center;
+	font-size: 16px;
+	@include pos(297, 28);
+	letter-spacing: -.3px;
+	line-height: 19px;
+	&.t2b{
+		@include pos(326, 47);
+	}
+}
+
+
+.hero {
+	@include pos-scale(149, 0, .5);
+}
+
+
+
+.logo{
+	@include pos(474, 25);
+}

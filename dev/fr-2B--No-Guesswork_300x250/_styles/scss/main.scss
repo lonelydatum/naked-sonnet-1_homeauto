@@ -1,0 +1,28 @@
+@import '../../../_common/styles/fr_size_300x250.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+
+// .t1{	
+// 	font-size: 18px;
+// 	@include pos(0, 8);
+// 	line-height: 22px;
+// }
+
+.t2{
+	
+	font-size: 12px;
+	letter-spacing: -.3px;
+	@include pos(10, 198);
+	line-height: 17px;
+	&.t2b{
+		@include pos(28, 212);
+	}
+}
+
+.hero{
+	@include pos-scale(45, 58, .5);
+}

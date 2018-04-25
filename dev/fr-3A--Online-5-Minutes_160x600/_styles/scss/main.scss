@@ -1,0 +1,34 @@
+@import '../../../_common/styles/fr_size_160x600.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+
+
+
+.t1{	
+	font-size: 24px;
+	@include pos(0, 24);
+	line-height: 27px;	
+}
+
+.t2{
+	text-align: center;
+	width: 100%;
+	font-size: 21px;
+	letter-spacing: 0.7px;
+	@include pos(0, 369);
+	line-height: 25px;
+	
+}
+
+
+.hero {
+	@include pos-scale(0, 147, .5);
+}
+
+.cta{	
+	@include pos-scale(5, 431, 0.85);	
+}

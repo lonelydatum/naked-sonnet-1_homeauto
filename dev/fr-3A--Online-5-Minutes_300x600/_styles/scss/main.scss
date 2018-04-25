@@ -1,0 +1,25 @@
+@import '../../../_common/styles/fr_size_300x600.scss';
+
+.frame{
+	// opacity: 1;
+	// color:red;
+}
+
+
+.t1{	
+	font-size: 32px;
+	@include pos(0, 30);
+	line-height: 34px;	
+}
+
+.t2{
+	text-align: center;
+	width: 100%;
+	font-size: 26px;
+	letter-spacing: 0.7px;
+	@include pos(0, 377);
+	line-height: 30px;
+	&.t2b{
+		@include pos(0, 413);
+	}
+}
