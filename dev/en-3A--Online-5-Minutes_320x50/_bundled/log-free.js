@@ -38,13 +38,13 @@ var _commonJs = require('./common.js');
 
 function start() {
 	_commonJs.tl.set('.frame1', { opacity: 1 });
-	_commonJs.tl.from('.bg', .3, { y: _commonJs.size.h, ease: Power2.easeOut }, .2);
+	// tl.from('.bg', .3, {y:size.h, ease:Power2.easeOut}, .2)
 
 	_commonJs.tl.from('.logo', .3, { opacity: 0 }, 'end');
 
 	_commonJs.tl.add('t1', '+=.2');
-	_commonJs.tl.from('.t1a', .35, { y: '+=' + 100, opacity: 0 }, 't1');
-	_commonJs.tl.from('.t1b', .35, { y: '+=' + 100, opacity: 0 }, 't1+=.2');
+	_commonJs.tl.from(['.t1a', '.t1b'], .35, { y: '+=' + 100, opacity: 0 }, 't1');
+	// tl.from('.t1b', .35, {y:`+=${100}`, opacity:0}, 't1+=.2')
 
 	_commonJs.tl.from('.cta', .3, { opacity: 0, scale: .3, ease: Back.easeInOut });
 	_commonJs.tl.from('.black', .3, { x: '+=50', y: '+=50', ease: Sine.easeInOut }, '-=.1');
