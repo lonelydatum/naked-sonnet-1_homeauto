@@ -39,13 +39,16 @@ var _commonJs = require('./common.js');
 var t1_time = .3;
 
 function start(heroFunk) {
+	var text2 = arguments.length <= 1 || arguments[1] === undefined ? ['.t2a'] : arguments[1];
+
 	var delay = location.hostname === 'localhost' ? 500 : 0;
 	setTimeout(function () {
-		tween(heroFunk);
+		tween(heroFunk, text2);
 	}, delay);
 }
 
 function tween(heroFunk) {
+	var text2 = arguments.length <= 1 || arguments[1] === undefined ? ['.t2a'] : arguments[1];
 
 	_commonJs.tl.set('.frame1', { opacity: 1 });
 	// tl.from('.bg', .5, {y:size.h, ease:Power2.easeOut}, .2)
@@ -61,8 +64,13 @@ function tween(heroFunk) {
 	}
 
 	_commonJs.tl.add('t2', '+=' + _commonJs.READ_T1);
-	_commonJs.tl.from('.t2a', .35, { y: '+=' + 100, opacity: 0 }, 't2');
-	_commonJs.tl.from('.t2b', .35, { y: '+=' + 100, opacity: 0 }, 't2+=.2');
+	// tl.from('.t2a', .35, {y:`+=${100}`, opacity:0}, 't2')
+	// tl.from('.t2b', .35, {y:`+=${100}`, opacity:0}, 't2+=.2')
+
+	_commonJs.tl.from(text2, .35, { y: '+=' + 100, opacity: 0 }, 't2');
+	if (text2.length === 1) {
+		_commonJs.tl.from('.t2b', .35, { y: '+=' + 100, opacity: 0 }, 't2+=.2');
+	}
 
 	_commonJs.tl.add('end', '+=.1');
 	_commonJs.tl.from('.line', .3, { scaleY: 0 }, 'end');

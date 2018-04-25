@@ -3,14 +3,14 @@ import {size, tlPulse, READ_T1, tl} from './common.js'
 
 const t1_time = .3
 
-function start(heroFunk) {
+function start(heroFunk, text2=['.t2a']) {
 	const delay = (location.hostname==='localhost') ? 500 : 0
 	setTimeout(()=>{
-		tween(heroFunk)	
+		tween(heroFunk, text2)	
 	}, delay)
 }
 
-function tween(heroFunk) {
+function tween(heroFunk, text2=['.t2a']) {
 	
 	tl.set('.frame1', {opacity:1})
 	// tl.from('.bg', .5, {y:size.h, ease:Power2.easeOut}, .2)
@@ -27,8 +27,13 @@ function tween(heroFunk) {
 	
 
 	tl.add('t2', `+=${READ_T1}`)
-	tl.from('.t2a', .35, {y:`+=${100}`, opacity:0}, 't2')
-	tl.from('.t2b', .35, {y:`+=${100}`, opacity:0}, 't2+=.2')
+	// tl.from('.t2a', .35, {y:`+=${100}`, opacity:0}, 't2')
+	// tl.from('.t2b', .35, {y:`+=${100}`, opacity:0}, 't2+=.2')
+
+	tl.from(text2, .35, {y:`+=${100}`, opacity:0}, 't2')		
+	if(text2.length===1){
+		tl.from('.t2b', .35, {y:`+=${100}`, opacity:0}, 't2+=.2')		
+	}
 
 	tl.add('end', '+=.1')
 	tl.from('.line', .3, {scaleY:0}, 'end')
