@@ -14,7 +14,7 @@ function start(heroFunk) {
 function tween(heroFunk) {
 	
 	tl.set('.frame1', {opacity:1})
-	tl.from('.bg', .4, {y:size.h, ease:Power2.easeOut}, .2)
+	// tl.from('.bg', .4, {y:size.h, ease:Power2.easeOut}, .2)
 
 
 	tl.from('.logo', .3, {opacity:0})

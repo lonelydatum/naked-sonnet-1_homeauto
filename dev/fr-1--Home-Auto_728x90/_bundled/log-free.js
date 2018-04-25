@@ -43,7 +43,7 @@ function start(heroFunk) {
 function tween(heroFunk) {
 
 	_commonJsCommonJs.tl.set('.frame1', { opacity: 1 });
-	_commonJsCommonJs.tl.from('.bg', .4, { y: _commonJsCommonJs.size.h, ease: Power2.easeOut }, .2);
+	// tl.from('.bg', .4, {y:size.h, ease:Power2.easeOut}, .2)
 
 	_commonJsCommonJs.tl.from('.logo', .3, { opacity: 0 });
 
