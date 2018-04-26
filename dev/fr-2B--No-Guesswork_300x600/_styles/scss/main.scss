@@ -7,9 +7,10 @@
 
 
 .t1{	
-	font-size: 32px;
+	font-size: 28px;
 	@include pos(0, 30);
-	line-height: 33px;	
+	line-height: 32px;	
+	letter-spacing: .2px;
 }
 
 .t2{

@@ -354,7 +354,7 @@ sup {
 }
 
 .t1 {
-  font-size: 32px;
+  font-size: 28px;
   -webkit-transform: translate(0px, 30px);
   -ms-transform: translate(0px, 30px);
   transform: translate(0px, 30px);
@@ -363,7 +363,8 @@ sup {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  line-height: 33px;
+  line-height: 32px;
+  letter-spacing: .2px;
 }
 
 .t2 {

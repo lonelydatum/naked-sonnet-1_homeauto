@@ -378,10 +378,10 @@ sup {
 
 .t2 {
   text-align: right;
-  font-size: 11px;
-  -webkit-transform: translate(11px, 198px);
-  -ms-transform: translate(11px, 198px);
-  transform: translate(11px, 198px);
+  font-size: 10px;
+  -webkit-transform: translate(9px, 198px);
+  -ms-transform: translate(9px, 198px);
+  transform: translate(9px, 198px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
